@@ -1,0 +1,5 @@
+#!/bin/bash
+
+MESSAGE=$( { xsel | buku -f 3 -a; } 2>&1 )
+
+notify-send -t 500 -u low "buku add" "$MESSAGE"
