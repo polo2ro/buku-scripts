@@ -18,6 +18,9 @@ apt install xsel libnotify-bin
 
 A script to add a tag on all bookmarks with HTTP status not equal to 200 OK.
 
+This can be followed by `buku --st expired -d` to delete all expired bookmarks.
+
+
 Requirements:
 
 ```bash
