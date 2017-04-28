@@ -8,9 +8,11 @@ while read -r line; do
     url=$(echo "$line" | cut -f 2);
     status=$(curl -sI "$url" | grep "HTTP" | cut -d " " -f 2);
 
-    if [ 200 != "$status" ]; then
+    echo "$status $url"
+
+    if [ 301 == "$status" ] || [ 404 == "$status" ]; then
         echo ${index} | buku --tag + "expired" -u;
     fi
 
-    sleep 2
+    sleep 3
 done <<< "$list"
